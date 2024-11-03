@@ -1,0 +1,25 @@
+BACKUP_DIR: backup
+BASE_DIR: D:/Min/Python/Project/FA_Data
+DATA_PROCESSING:
+  backup_days: 7
+  batch_size: 1000
+  correlation_threshold: 0.95
+  min_data_points: 30
+  min_date_range: 30
+  missing_threshold: 0.1
+FEATURES_DIR: features
+LOG_DIR: logs
+META_DATA_DIR: meta_data
+TECH_PARAMS:
+  MACD:
+    fastperiod: 12
+    signalperiod: 9
+    slowperiod: 26
+  RSI:
+    timeperiod: 14
+  SMA:
+    timeperiod: 30
+  STOCH:
+    fastk_period: 5
+    slowd_period: 3
+    slowk_period: 3
