@@ -9149,3 +9149,12 @@ NameError: name 'process_price_data' is not defined
 2024-11-01 00:21:29,442 - INFO - - Failed stocks: 911201
 2024-11-01 00:21:29,688 - INFO - Batch processing completed successfully
 2024-11-01 00:21:29,689 - INFO - Process completed successfully
+2024-11-03 08:47:53,126 - INFO - Starting batch processing...
+2024-11-03 08:49:18,042 - WARNING - Missing price data for stock ID 911201
+2024-11-03 08:49:22,007 - INFO - Merging processed data...
+2024-11-03 08:49:22,992 - INFO - Saving merged data...
+2024-11-03 08:50:20,896 - INFO - Processing completed:
+2024-11-03 08:50:20,897 - INFO - - Successfully processed: 1147/1148 stocks
+2024-11-03 08:50:20,898 - INFO - - Failed stocks: 911201
+2024-11-03 08:50:21,246 - INFO - Batch processing completed successfully
+2024-11-03 08:50:21,247 - INFO - Process completed successfully
