@@ -9158,3 +9158,98 @@ NameError: name 'process_price_data' is not defined
 2024-11-03 08:50:20,898 - INFO - - Failed stocks: 911201
 2024-11-03 08:50:21,246 - INFO - Batch processing completed successfully
 2024-11-03 08:50:21,247 - INFO - Process completed successfully
+2024-11-12 14:15:06,763 - INFO - Starting batch processing...
+2024-11-12 14:16:28,148 - WARNING - Missing price data for stock ID 911201
+2024-11-12 14:16:31,851 - INFO - Merging processed data...
+2024-11-12 14:16:32,378 - INFO - Saving merged data...
+2024-11-12 14:17:29,192 - INFO - Processing completed:
+2024-11-12 14:17:29,193 - INFO - - Successfully processed: 1147/1148 stocks
+2024-11-12 14:17:29,194 - INFO - - Failed stocks: 911201
+2024-11-12 14:17:29,543 - INFO - Batch processing completed successfully
+2024-11-12 14:17:29,544 - INFO - Process completed successfully
+2024-11-12 14:20:08,805 - INFO - Starting batch processing...
+2024-11-12 14:20:14,135 - WARNING - Error calculating RSI for 1101: Length of values (2584) does not match length of index (2586)
+2024-11-12 14:20:14,199 - WARNING - Error calculating RSI for 1101B: Length of values (1275) does not match length of index (1397)
+2024-11-12 14:20:14,261 - WARNING - Error calculating RSI for 1102: Length of values (2585) does not match length of index (2586)
+2024-11-12 14:20:14,338 - WARNING - Error calculating RSI for 1103: Length of values (2585) does not match length of index (2586)
+2024-11-12 14:20:14,674 - WARNING - Error calculating RSI for 1110: Length of values (2578) does not match length of index (2586)
+2024-11-12 14:20:14,826 - WARNING - Error calculating RSI for 1203: Length of values (2573) does not match length of index (2586)
+2024-11-12 14:20:14,974 - WARNING - Error calculating RSI for 1213: Length of values (2360) does not match length of index (2469)
+2024-11-12 14:20:15,123 - WARNING - Error calculating RSI for 1216: Length of values (2585) does not match length of index (2586)
+2024-11-12 14:20:15,359 - WARNING - Error calculating RSI for 1219: Length of values (2578) does not match length of index (2586)
+2024-11-12 14:20:15,519 - WARNING - Error calculating RSI for 1225: Length of values (2503) does not match length of index (2586)
+2024-11-12 14:20:15,676 - WARNING - Error calculating RSI for 1229: Length of values (2585) does not match length of index (2586)
+2024-11-12 14:20:15,937 - WARNING - Error calculating RSI for 1233: Length of values (2583) does not match length of index (2586)
+2024-11-12 14:20:16,090 - WARNING - Error calculating RSI for 1235: Length of values (2523) does not match length of index (2586)
+2024-11-12 14:20:16,166 - WARNING - Error calculating RSI for 1236: Length of values (2576) does not match length of index (2579)
+2024-11-12 14:20:16,258 - WARNING - Error calculating RSI for 1256: Length of values (2088) does not match length of index (2107)
+2024-11-12 14:20:16,316 - WARNING - Error calculating RSI for 1262: Length of values (1352) does not match length of index (1353)
+2024-11-12 14:20:17,254 - WARNING - Error calculating RSI for 1312A: Length of values (2052) does not match length of index (2586)
+2024-11-12 14:20:17,527 - WARNING - Error calculating RSI for 1315: Length of values (2557) does not match length of index (2562)
+2024-11-12 14:20:17,611 - WARNING - Error calculating RSI for 1316: Length of values (2570) does not match length of index (2571)
+2024-11-12 14:20:17,927 - WARNING - Error calculating RSI for 1324: Length of values (2571) does not match length of index (2586)
+2024-11-12 14:20:17,989 - WARNING - Error calculating RSI for 1325: Length of values (2574) does not match length of index (2576)
+2024-11-12 14:20:18,465 - WARNING - Error calculating RSI for 1341: Length of values (1417) does not match length of index (1421)
+2024-11-12 14:20:18,728 - WARNING - Error calculating RSI for 1410: Length of values (2529) does not match length of index (2570)
+2024-11-12 14:20:18,797 - WARNING - Error calculating RSI for 1413: Length of values (2565) does not match length of index (2576)
+2024-11-12 14:20:18,950 - WARNING - Error calculating RSI for 1416: Length of values (2560) does not match length of index (2561)
+2024-11-12 14:20:19,113 - WARNING - Error calculating RSI for 1418: Length of values (2115) does not match length of index (2579)
+2024-11-12 14:20:19,182 - WARNING - Error calculating RSI for 1419: Length of values (2513) does not match length of index (2586)
+2024-11-12 14:20:19,245 - WARNING - Error calculating RSI for 1423: Length of values (2568) does not match length of index (2572)
+2024-11-12 14:20:19,318 - WARNING - Error calculating RSI for 1432: Length of values (2577) does not match length of index (2579)
+2024-11-12 14:20:19,505 - WARNING - Error calculating RSI for 1435: Length of values (2287) does not match length of index (2338)
+2024-11-12 14:20:19,567 - WARNING - Error calculating RSI for 1436: Length of values (2582) does not match length of index (2586)
+2024-11-12 14:20:19,727 - WARNING - Error calculating RSI for 1438: Length of values (2492) does not match length of index (2580)
+2024-11-12 14:20:19,800 - WARNING - Error calculating RSI for 1439: Length of values (2579) does not match length of index (2586)
+2024-11-12 14:20:19,950 - WARNING - Error calculating RSI for 1441: Length of values (2570) does not match length of index (2573)
+2024-11-12 14:20:20,112 - WARNING - Error calculating RSI for 1443: Length of values (2544) does not match length of index (2586)
+2024-11-12 14:20:20,258 - WARNING - Error calculating RSI for 1445: Length of values (2585) does not match length of index (2586)
+2024-11-12 14:20:20,503 - WARNING - Error calculating RSI for 1449: Length of values (2554) does not match length of index (2564)
+2024-11-12 14:20:20,734 - WARNING - Error calculating RSI for 1453: Length of values (2577) does not match length of index (2586)
+2024-11-12 14:20:20,804 - WARNING - Error calculating RSI for 1454: Length of values (2580) does not match length of index (2586)
+2024-11-12 14:20:20,955 - WARNING - Error calculating RSI for 1456: Length of values (2321) does not match length of index (2577)
+2024-11-12 14:20:21,018 - WARNING - Error calculating RSI for 1457: Length of values (2574) does not match length of index (2576)
+2024-11-12 14:20:21,094 - WARNING - Error calculating RSI for 1459: Length of values (2585) does not match length of index (2586)
+2024-11-12 14:20:21,443 - WARNING - Error calculating RSI for 1465: Length of values (2577) does not match length of index (2586)
+2024-11-12 14:20:21,510 - WARNING - Error calculating RSI for 1466: Length of values (2566) does not match length of index (2586)
+2024-11-12 14:20:21,732 - WARNING - Error calculating RSI for 1469: Length of values (723) does not match length of index (1048)
+2024-11-12 14:20:21,774 - WARNING - Error calculating RSI for 1470: Length of values (2068) does not match length of index (2586)
+2024-11-12 14:20:21,950 - WARNING - Error calculating RSI for 1472: Length of values (2506) does not match length of index (2573)
+2024-11-12 14:20:22,214 - WARNING - Error calculating RSI for 1475: Length of values (2393) does not match length of index (2579)
+2024-11-12 14:20:22,846 - WARNING - Error calculating RSI for 1512: Length of values (2574) does not match length of index (2579)
+2024-11-12 14:20:23,169 - WARNING - Error calculating RSI for 1516: Length of values (2484) does not match length of index (2578)
+2024-11-12 14:20:23,396 - WARNING - Error calculating RSI for 1521: Length of values (2585) does not match length of index (2586)
+2024-11-12 14:20:23,554 - WARNING - Error calculating RSI for 1522A: Length of values (653) does not match length of index (785)
+2024-11-12 14:20:23,683 - WARNING - Error calculating RSI for 1525: Length of values (2583) does not match length of index (2586)
+2024-11-12 14:20:24,009 - WARNING - Error calculating RSI for 1529: Length of values (2513) does not match length of index (2579)
+2024-11-12 14:20:24,073 - WARNING - Error calculating RSI for 1530: Length of values (2572) does not match length of index (2586)
+2024-11-12 14:20:24,418 - WARNING - Error calculating RSI for 1535: Length of values (2583) does not match length of index (2586)
+2024-11-12 14:20:24,674 - WARNING - Error calculating RSI for 1538: Length of values (2447) does not match length of index (2559)
+2024-11-12 14:20:24,927 - WARNING - Error calculating RSI for 1541: Length of values (2577) does not match length of index (2586)
+2024-11-12 14:20:25,353 - WARNING - Error calculating RSI for 1583: Length of values (2506) does not match length of index (2586)
+2024-11-12 14:20:25,410 - WARNING - Error calculating RSI for 1587: Length of values (1597) does not match length of index (1598)
+2024-11-12 14:20:25,631 - WARNING - Error calculating RSI for 1592: Length of values (1628) does not match length of index (1629)
+2024-11-12 14:20:25,807 - WARNING - Error calculating RSI for 1603: Length of values (2473) does not match length of index (2476)
+2024-11-12 14:20:26,441 - WARNING - Error calculating RSI for 1614: Length of values (2584) does not match length of index (2586)
+2024-11-12 14:20:26,509 - WARNING - Error calculating RSI for 1615: Length of values (2567) does not match length of index (2586)
+2024-11-12 14:20:26,659 - WARNING - Error calculating RSI for 1617: Length of values (2560) does not match length of index (2586)
+2024-11-12 14:21:40,988 - INFO - Starting batch processing...
+2024-11-12 14:23:06,482 - WARNING - Missing price data for stock ID 911201
+2024-11-12 14:23:10,316 - INFO - Merging processed data...
+2024-11-12 14:23:10,936 - INFO - Saving merged data...
+2024-11-12 14:24:10,919 - INFO - Processing completed:
+2024-11-12 14:24:10,922 - INFO - - Successfully processed: 1147/1148 stocks
+2024-11-12 14:24:10,923 - INFO - - Failed stocks: 911201
+2024-11-12 14:24:11,350 - INFO - Batch processing completed successfully
+2024-11-12 14:24:11,351 - INFO - Process completed successfully
+2024-11-12 15:06:28,983 - ERROR - No such comm target registered: jupyter.widget.control
+2024-11-12 15:06:28,988 - WARNING - No such comm: 76371189-9702-42f6-9ca1-48487ed73f41
+2024-11-12 15:06:31,519 - INFO - Starting batch processing...
+2024-11-12 15:07:55,387 - WARNING - Missing price data for stock ID 911201
+2024-11-12 15:07:59,382 - INFO - Merging processed data...
+2024-11-12 15:08:00,059 - INFO - Saving merged data...
+2024-11-12 15:08:57,363 - INFO - Processing completed:
+2024-11-12 15:08:57,364 - INFO - - Successfully processed: 1147/1148 stocks
+2024-11-12 15:08:57,365 - INFO - - Failed stocks: 911201
+2024-11-12 15:08:57,633 - INFO - Batch processing completed successfully
+2024-11-12 15:08:57,635 - INFO - Process completed successfully
