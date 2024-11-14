@@ -9253,3 +9253,296 @@ NameError: name 'process_price_data' is not defined
 2024-11-12 15:08:57,365 - INFO - - Failed stocks: 911201
 2024-11-12 15:08:57,633 - INFO - Batch processing completed successfully
 2024-11-12 15:08:57,635 - INFO - Process completed successfully
+2024-11-13 23:29:31,724 - INFO - 開始執行產業分析系統
+2024-11-13 23:29:31,772 - INFO - 成功載入公司資料
+2024-11-13 23:29:32,045 - INFO - 成功載入產業指數資料
+2024-11-13 23:29:32,100 - INFO - 成功載入市場指數資料
+2024-11-13 23:29:32,254 - INFO - 分析期間: 2023-01-01 到 2024-11-12
+2024-11-13 23:29:32,255 - INFO - 目標產業: 光電
+2024-11-13 23:29:32,258 - INFO - 開始生成週度相關性資料...
+2024-11-13 23:29:32,472 - INFO - 使用的指數類型:
+2024-11-13 23:29:32,481 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230106.csv
+2024-11-13 23:29:32,770 - INFO - 使用的指數類型:
+2024-11-13 23:29:32,776 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230113.csv
+2024-11-13 23:29:32,928 - INFO - 使用的指數類型:
+2024-11-13 23:29:32,936 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230117.csv
+2024-11-13 23:29:33,106 - INFO - 使用的指數類型:
+2024-11-13 23:29:33,113 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230203.csv
+2024-11-13 23:29:33,391 - INFO - 使用的指數類型:
+2024-11-13 23:29:33,400 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230210.csv
+2024-11-13 23:29:33,549 - INFO - 使用的指數類型:
+2024-11-13 23:29:33,554 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230217.csv
+2024-11-13 23:29:33,707 - INFO - 使用的指數類型:
+2024-11-13 23:29:33,712 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230224.csv
+2024-11-13 23:29:33,856 - INFO - 使用的指數類型:
+2024-11-13 23:29:33,863 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230303.csv
+2024-11-13 23:29:34,013 - INFO - 使用的指數類型:
+2024-11-13 23:29:34,018 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230310.csv
+2024-11-13 23:29:34,020 - INFO - 處理進度: 10/97 (10.3%)
+2024-11-13 23:29:34,147 - INFO - 使用的指數類型:
+2024-11-13 23:29:34,152 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230317.csv
+2024-11-13 23:29:34,307 - INFO - 使用的指數類型:
+2024-11-13 23:29:34,313 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230324.csv
+2024-11-13 23:29:34,479 - INFO - 使用的指數類型:
+2024-11-13 23:29:34,484 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230331.csv
+2024-11-13 23:29:34,630 - INFO - 使用的指數類型:
+2024-11-13 23:29:34,637 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230407.csv
+2024-11-13 23:29:34,773 - INFO - 使用的指數類型:
+2024-11-13 23:29:34,779 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230414.csv
+2024-11-13 23:29:34,923 - INFO - 使用的指數類型:
+2024-11-13 23:29:34,929 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230421.csv
+2024-11-13 23:29:35,078 - INFO - 使用的指數類型:
+2024-11-13 23:29:35,082 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230428.csv
+2024-11-13 23:29:35,240 - INFO - 使用的指數類型:
+2024-11-13 23:29:35,249 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230505.csv
+2024-11-13 23:29:35,391 - INFO - 使用的指數類型:
+2024-11-13 23:29:35,397 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230512.csv
+2024-11-13 23:29:35,524 - INFO - 使用的指數類型:
+2024-11-13 23:29:35,530 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230519.csv
+2024-11-13 23:29:35,531 - INFO - 處理進度: 20/97 (20.6%)
+2024-11-13 23:29:35,685 - INFO - 使用的指數類型:
+2024-11-13 23:29:35,690 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230526.csv
+2024-11-13 23:29:35,856 - INFO - 使用的指數類型:
+2024-11-13 23:29:35,863 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230602.csv
+2024-11-13 23:29:36,043 - INFO - 使用的指數類型:
+2024-11-13 23:29:36,050 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230609.csv
+2024-11-13 23:29:36,257 - INFO - 使用的指數類型:
+2024-11-13 23:29:36,264 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230616.csv
+2024-11-13 23:29:36,420 - INFO - 使用的指數類型:
+2024-11-13 23:29:36,425 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230621.csv
+2024-11-13 23:29:36,602 - INFO - 使用的指數類型:
+2024-11-13 23:29:36,607 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230630.csv
+2024-11-13 23:29:36,759 - INFO - 使用的指數類型:
+2024-11-13 23:29:36,767 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230707.csv
+2024-11-13 23:29:36,917 - INFO - 使用的指數類型:
+2024-11-13 23:29:36,923 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230714.csv
+2024-11-13 23:29:37,104 - INFO - 使用的指數類型:
+2024-11-13 23:29:37,111 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230721.csv
+2024-11-13 23:29:37,322 - INFO - 使用的指數類型:
+2024-11-13 23:29:37,329 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230728.csv
+2024-11-13 23:29:37,331 - INFO - 處理進度: 30/97 (30.9%)
+2024-11-13 23:29:37,471 - INFO - 使用的指數類型:
+2024-11-13 23:29:37,477 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230804.csv
+2024-11-13 23:29:37,662 - INFO - 使用的指數類型:
+2024-11-13 23:29:37,668 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230811.csv
+2024-11-13 23:29:37,809 - INFO - 使用的指數類型:
+2024-11-13 23:29:37,815 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230818.csv
+2024-11-13 23:29:37,966 - INFO - 使用的指數類型:
+2024-11-13 23:29:37,971 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230825.csv
+2024-11-13 23:29:38,142 - INFO - 使用的指數類型:
+2024-11-13 23:29:38,148 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230901.csv
+2024-11-13 23:29:38,330 - INFO - 使用的指數類型:
+2024-11-13 23:29:38,338 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230908.csv
+2024-11-13 23:29:38,511 - INFO - 使用的指數類型:
+2024-11-13 23:29:38,519 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230915.csv
+2024-11-13 23:29:38,700 - INFO - 使用的指數類型:
+2024-11-13 23:29:38,706 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230922.csv
+2024-11-13 23:29:38,892 - INFO - 使用的指數類型:
+2024-11-13 23:29:38,898 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20230928.csv
+2024-11-13 23:29:39,048 - INFO - 使用的指數類型:
+2024-11-13 23:29:39,053 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20231006.csv
+2024-11-13 23:29:39,055 - INFO - 處理進度: 40/97 (41.2%)
+2024-11-13 23:29:39,189 - INFO - 使用的指數類型:
+2024-11-13 23:29:39,196 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20231013.csv
+2024-11-13 23:29:39,345 - INFO - 使用的指數類型:
+2024-11-13 23:29:39,354 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20231020.csv
+2024-11-13 23:29:39,531 - INFO - 使用的指數類型:
+2024-11-13 23:29:39,537 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20231027.csv
+2024-11-13 23:29:39,689 - INFO - 使用的指數類型:
+2024-11-13 23:29:39,697 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20231103.csv
+2024-11-13 23:29:39,841 - INFO - 使用的指數類型:
+2024-11-13 23:29:39,847 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20231110.csv
+2024-11-13 23:29:39,998 - INFO - 使用的指數類型:
+2024-11-13 23:29:40,006 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20231117.csv
+2024-11-13 23:29:40,158 - INFO - 使用的指數類型:
+2024-11-13 23:29:40,164 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20231124.csv
+2024-11-13 23:29:40,312 - INFO - 使用的指數類型:
+2024-11-13 23:29:40,319 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20231201.csv
+2024-11-13 23:29:40,461 - INFO - 使用的指數類型:
+2024-11-13 23:29:40,467 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20231208.csv
+2024-11-13 23:29:40,634 - INFO - 使用的指數類型:
+2024-11-13 23:29:40,640 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20231215.csv
+2024-11-13 23:29:40,642 - INFO - 處理進度: 50/97 (51.5%)
+2024-11-13 23:29:40,825 - INFO - 使用的指數類型:
+2024-11-13 23:29:40,832 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20231222.csv
+2024-11-13 23:29:40,995 - INFO - 使用的指數類型:
+2024-11-13 23:29:41,000 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20231229.csv
+2024-11-13 23:29:41,196 - INFO - 使用的指數類型:
+2024-11-13 23:29:41,204 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240105.csv
+2024-11-13 23:29:41,358 - INFO - 使用的指數類型:
+2024-11-13 23:29:41,365 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240112.csv
+2024-11-13 23:29:41,564 - INFO - 使用的指數類型:
+2024-11-13 23:29:41,572 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240119.csv
+2024-11-13 23:29:41,744 - INFO - 使用的指數類型:
+2024-11-13 23:29:41,749 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240126.csv
+2024-11-13 23:29:41,911 - INFO - 使用的指數類型:
+2024-11-13 23:29:41,917 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240202.csv
+2024-11-13 23:29:42,077 - INFO - 使用的指數類型:
+2024-11-13 23:29:42,084 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240205.csv
+2024-11-13 23:29:42,247 - INFO - 使用的指數類型:
+2024-11-13 23:29:42,255 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240216.csv
+2024-11-13 23:29:42,408 - INFO - 使用的指數類型:
+2024-11-13 23:29:42,415 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240223.csv
+2024-11-13 23:29:42,417 - INFO - 處理進度: 60/97 (61.9%)
+2024-11-13 23:29:42,566 - INFO - 使用的指數類型:
+2024-11-13 23:29:42,572 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240301.csv
+2024-11-13 23:29:42,750 - INFO - 使用的指數類型:
+2024-11-13 23:29:42,757 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240308.csv
+2024-11-13 23:29:42,920 - INFO - 使用的指數類型:
+2024-11-13 23:29:42,932 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240315.csv
+2024-11-13 23:29:43,109 - INFO - 使用的指數類型:
+2024-11-13 23:29:43,116 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240322.csv
+2024-11-13 23:29:43,283 - INFO - 使用的指數類型:
+2024-11-13 23:29:43,289 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240329.csv
+2024-11-13 23:29:43,447 - INFO - 使用的指數類型:
+2024-11-13 23:29:43,452 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240403.csv
+2024-11-13 23:29:43,707 - INFO - 使用的指數類型:
+2024-11-13 23:29:43,711 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240412.csv
+2024-11-13 23:29:43,864 - INFO - 使用的指數類型:
+2024-11-13 23:29:43,872 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240419.csv
+2024-11-13 23:29:44,047 - INFO - 使用的指數類型:
+2024-11-13 23:29:44,054 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240426.csv
+2024-11-13 23:29:44,192 - INFO - 使用的指數類型:
+2024-11-13 23:29:44,199 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240503.csv
+2024-11-13 23:29:44,201 - INFO - 處理進度: 70/97 (72.2%)
+2024-11-13 23:29:44,445 - INFO - 使用的指數類型:
+2024-11-13 23:29:44,451 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240510.csv
+2024-11-13 23:29:44,622 - INFO - 使用的指數類型:
+2024-11-13 23:29:44,627 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240517.csv
+2024-11-13 23:29:44,764 - INFO - 使用的指數類型:
+2024-11-13 23:29:44,770 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240524.csv
+2024-11-13 23:29:44,949 - INFO - 使用的指數類型:
+2024-11-13 23:29:44,955 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240531.csv
+2024-11-13 23:29:45,094 - INFO - 使用的指數類型:
+2024-11-13 23:29:45,100 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240607.csv
+2024-11-13 23:29:45,245 - INFO - 使用的指數類型:
+2024-11-13 23:29:45,251 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240614.csv
+2024-11-13 23:29:45,386 - INFO - 使用的指數類型:
+2024-11-13 23:29:45,392 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240621.csv
+2024-11-13 23:29:45,534 - INFO - 使用的指數類型:
+2024-11-13 23:29:45,539 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240628.csv
+2024-11-13 23:29:45,689 - INFO - 使用的指數類型:
+2024-11-13 23:29:45,696 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240705.csv
+2024-11-13 23:29:45,876 - INFO - 使用的指數類型:
+2024-11-13 23:29:45,884 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240712.csv
+2024-11-13 23:29:45,887 - INFO - 處理進度: 80/97 (82.5%)
+2024-11-13 23:29:46,035 - INFO - 使用的指數類型:
+2024-11-13 23:29:46,041 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240719.csv
+2024-11-13 23:29:46,193 - INFO - 使用的指數類型:
+2024-11-13 23:29:46,199 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240726.csv
+2024-11-13 23:29:46,345 - INFO - 使用的指數類型:
+2024-11-13 23:29:46,353 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240802.csv
+2024-11-13 23:29:46,531 - INFO - 使用的指數類型:
+2024-11-13 23:29:46,539 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240809.csv
+2024-11-13 23:29:46,688 - INFO - 使用的指數類型:
+2024-11-13 23:29:46,694 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240816.csv
+2024-11-13 23:29:46,853 - INFO - 使用的指數類型:
+2024-11-13 23:29:46,860 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240823.csv
+2024-11-13 23:29:47,033 - INFO - 使用的指數類型:
+2024-11-13 23:29:47,041 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240830.csv
+2024-11-13 23:29:47,195 - INFO - 使用的指數類型:
+2024-11-13 23:29:47,201 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240906.csv
+2024-11-13 23:29:47,340 - INFO - 使用的指數類型:
+2024-11-13 23:29:47,348 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240913.csv
+2024-11-13 23:29:47,523 - INFO - 使用的指數類型:
+2024-11-13 23:29:47,530 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240920.csv
+2024-11-13 23:29:47,532 - INFO - 處理進度: 90/97 (92.8%)
+2024-11-13 23:29:47,725 - INFO - 使用的指數類型:
+2024-11-13 23:29:47,731 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20240927.csv
+2024-11-13 23:29:47,887 - INFO - 使用的指數類型:
+2024-11-13 23:29:47,893 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20241004.csv
+2024-11-13 23:29:48,026 - INFO - 使用的指數類型:
+2024-11-13 23:29:48,036 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20241011.csv
+2024-11-13 23:29:48,234 - INFO - 使用的指數類型:
+2024-11-13 23:29:48,242 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20241018.csv
+2024-11-13 23:29:48,427 - INFO - 使用的指數類型:
+2024-11-13 23:29:48,434 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20241025.csv
+2024-11-13 23:29:48,589 - INFO - 使用的指數類型:
+2024-11-13 23:29:48,595 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20241101.csv
+2024-11-13 23:29:48,814 - INFO - 使用的指數類型:
+2024-11-13 23:29:48,821 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20241108.csv
+2024-11-13 23:29:48,986 - INFO - 使用的指數類型:
+2024-11-13 23:29:48,992 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\weekly\industry_correlation_20241112.csv
+2024-11-13 23:29:48,994 - INFO - 開始生成月度相關性資料...
+2024-11-13 23:29:49,153 - INFO - 使用的指數類型:
+2024-11-13 23:29:49,159 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20230131.csv
+2024-11-13 23:29:49,304 - INFO - 使用的指數類型:
+2024-11-13 23:29:49,310 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20230224.csv
+2024-11-13 23:29:49,448 - INFO - 使用的指數類型:
+2024-11-13 23:29:49,454 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20230331.csv
+2024-11-13 23:29:49,612 - INFO - 使用的指數類型:
+2024-11-13 23:29:49,619 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20230428.csv
+2024-11-13 23:29:49,749 - INFO - 使用的指數類型:
+2024-11-13 23:29:49,756 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20230531.csv
+2024-11-13 23:29:49,884 - INFO - 使用的指數類型:
+2024-11-13 23:29:49,891 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20230630.csv
+2024-11-13 23:29:50,055 - INFO - 使用的指數類型:
+2024-11-13 23:29:50,061 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20230731.csv
+2024-11-13 23:29:50,223 - INFO - 使用的指數類型:
+2024-11-13 23:29:50,229 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20230831.csv
+2024-11-13 23:29:50,403 - INFO - 使用的指數類型:
+2024-11-13 23:29:50,411 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20230928.csv
+2024-11-13 23:29:50,413 - INFO - 處理進度: 10/23 (43.5%)
+2024-11-13 23:29:50,586 - INFO - 使用的指數類型:
+2024-11-13 23:29:50,591 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20231031.csv
+2024-11-13 23:29:50,759 - INFO - 使用的指數類型:
+2024-11-13 23:29:50,765 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20231130.csv
+2024-11-13 23:29:50,923 - INFO - 使用的指數類型:
+2024-11-13 23:29:50,929 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20231229.csv
+2024-11-13 23:29:51,082 - INFO - 使用的指數類型:
+2024-11-13 23:29:51,088 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20240131.csv
+2024-11-13 23:29:51,247 - INFO - 使用的指數類型:
+2024-11-13 23:29:51,253 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20240229.csv
+2024-11-13 23:29:51,400 - INFO - 使用的指數類型:
+2024-11-13 23:29:51,406 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20240329.csv
+2024-11-13 23:29:51,589 - INFO - 使用的指數類型:
+2024-11-13 23:29:51,598 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20240430.csv
+2024-11-13 23:29:51,800 - INFO - 使用的指數類型:
+2024-11-13 23:29:51,806 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20240531.csv
+2024-11-13 23:29:51,956 - INFO - 使用的指數類型:
+2024-11-13 23:29:51,961 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20240628.csv
+2024-11-13 23:29:52,129 - INFO - 使用的指數類型:
+2024-11-13 23:29:52,139 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20240731.csv
+2024-11-13 23:29:52,141 - INFO - 處理進度: 20/23 (87.0%)
+2024-11-13 23:29:52,334 - INFO - 使用的指數類型:
+2024-11-13 23:29:52,340 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20240830.csv
+2024-11-13 23:29:52,487 - INFO - 使用的指數類型:
+2024-11-13 23:29:52,493 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20240930.csv
+2024-11-13 23:29:52,651 - INFO - 使用的指數類型:
+2024-11-13 23:29:52,658 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20241030.csv
+2024-11-13 23:29:52,821 - INFO - 使用的指數類型:
+2024-11-13 23:29:52,826 - INFO - 已保存相關性矩陣到: D:\Min\Python\Project\FA_Data\industry_correlation\monthly\industry_correlation_20241112.csv
+2024-11-13 23:29:52,828 - INFO - 開始生成產業分析報告...
+2024-11-13 23:29:52,847 - INFO - 分析 光電 使用的是 報酬指數
+2024-11-13 23:29:52,911 - ERROR - 程式執行錯誤: 1
+2024-11-13 23:29:53,016 - ERROR - 錯誤追蹤:
+Traceback (most recent call last):
+  File "C:\Users\archi\AppData\Roaming\Python\Python310\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 2606, in pandas._libs.hashtable.Int64HashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 2630, in pandas._libs.hashtable.Int64HashTable.get_item
+KeyError: 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\archi\AppData\Local\Temp\ipykernel_67788\2758020896.py", line 44, in <module>
+    report = analyzer.generate_enhanced_report(
+  File "C:\Users\archi\AppData\Local\Temp\ipykernel_67788\2964409400.py", line 649, in generate_enhanced_report
+    report['risk_analysis'] = self.analyze_risk_metrics(
+  File "C:\Users\archi\AppData\Local\Temp\ipykernel_67788\2964409400.py", line 316, in analyze_risk_metrics
+    risk_metrics['drawdown'] = self._calculate_drawdown_metrics(industry_data['收盤指數'])
+  File "C:\Users\archi\AppData\Local\Temp\ipykernel_67788\2964409400.py", line 351, in _calculate_drawdown_metrics
+    drawdown_periods = self._analyze_drawdown_periods(prices)
+  File "C:\Users\archi\AppData\Local\Temp\ipykernel_67788\2964409400.py", line 370, in _analyze_drawdown_periods
+    if not in_drawdown and drawdowns[i] < 0:
+  File "C:\Users\archi\AppData\Roaming\Python\Python310\site-packages\pandas\core\series.py", line 1112, in __getitem__
+    return self._get_value(key)
+  File "C:\Users\archi\AppData\Roaming\Python\Python310\site-packages\pandas\core\series.py", line 1228, in _get_value
+    loc = self.index.get_loc(label)
+  File "C:\Users\archi\AppData\Roaming\Python\Python310\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 1
+
