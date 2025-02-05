@@ -1,0 +1,124 @@
+# 基礎路徑設定
+BASE_DIR: "D:/Min/Python/Project/FA_Data"
+META_DATA_DIR: "meta_data"
+BACKUP_DIR: "backup"
+LOG_DIR: "logs"
+FEATURES_DIR: "features"
+
+# 資料處理參數
+DATA_PROCESSING:
+  min_data_points: 30
+  backup_days: 7
+  missing_threshold: 0.1
+  correlation_threshold: 0.95
+  min_date_range: 30
+  batch_size: 1000
+
+# 技術指標配置
+TECHNICAL_FEATURES:
+  trend:
+    - SMA30
+    - DEMA30
+    - EMA30
+    - TSF
+  momentum:
+    - RSI
+    - MACD
+    - MACD_signal
+    - MACD_hist
+  volatility:
+    - slowk
+    - slowd
+    - upperband
+    - lowerband
+    - middleband
+    - SAR
+  volume:
+    - 量比
+    - 量增率
+    - 量能趨勢
+    - 放量程度
+    - 量價背離
+  price:
+    - 振幅
+    - 漲跌幅
+    - 相對強弱
+    - 趨勢強度
+
+# 技術指標參數
+TECH_PARAMS:
+  SMA:
+    timeperiod: 30
+  RSI:
+    timeperiod: 14
+  MACD:
+    fastperiod: 12
+    slowperiod: 26
+    signalperiod: 9
+  STOCH:
+    fastk_period: 5
+    slowk_period: 3
+    slowd_period: 3
+  BBANDS:
+    timeperiod: 30
+    nbdevup: 2
+    nbdevdn: 2
+  SAR:
+    acceleration: 0.02
+    maximum: 0.2
+
+# 數據品質參數
+DATA_QUALITY:
+  min_price: 1.0
+  min_volume: 1000
+  max_missing_ratio: 0.1
+  outlier_std_threshold: 3.0
+  correlation_threshold: 0.95
+  min_data_points: 30
+
+# 特徵優先級設定
+FEATURE_PRIORITY:
+  收盤價: 1
+  RSI: 2
+  MACD: 3
+  KD_差值: 4
+  SMA30: 5
+  DEMA30: 6
+  EMA30: 7
+  波動率: 8
+  趨勢強度: 9
+  量能趨勢: 10
+
+# 保護特徵列表
+PROTECTED_FEATURES:
+  - RSI
+  - MACD
+  - KD_差值
+  - 收盤價
+  - 開盤價
+  - 最高價
+  - 最低價
+
+# 日誌設定
+LOGGING:
+  file_level: DEBUG
+  console_level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_encoding: "utf-8"
+
+# 批次處理設定
+BATCH_PROCESSING:
+  max_workers: 4
+  retry_times: 3
+  retry_delay: 5
+  timeout: 300
+
+# 特徵生成設定
+FEATURE_GENERATION:
+  enable_advanced_features: true
+  enable_volume_features: true
+  enable_volatility_features: true
+  min_periods:
+    ma: 30
+    volatility: 20
+    volume: 20
