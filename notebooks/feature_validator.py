@@ -96,14 +96,13 @@ class FeatureValidator:
         for _, row in self.industry_mapping.iterrows():
             industry_name = row['標準化產業']
             stock_id = row['對應產業指數']
-            analysis_file = row['產業分析檔案']
             
             if pd.isna(stock_id) or stock_id == '未找到對應指數':
                 industry_status[industry_name] = "無對應指數"
                 continue
                 
             # 檢查特徵文件
-            feature_filename = self.config.get_feature_filename(stock_id, analysis_file)
+            feature_filename = self.config.get_feature_filename(stock_id)
             feature_path = self.config.features_path / feature_filename
             
             if not feature_path.exists():
@@ -133,36 +132,35 @@ class FeatureValidator:
                 return False
                 
             # 讀取特徵文件
-            with open(feature_path, 'r', encoding='utf-8') as f:
-                features = json.load(f)
-                
-            # 檢查特徵內容
-            if not isinstance(features, dict):
-                self.logger.error(f"特徵文件格式錯誤: {feature_file}")
+            features = pd.read_csv(feature_path, encoding=self.config.ENCODING)
+            
+            # 檢查必要的欄位
+            required_columns = ['日期', 'open', 'high', 'low', 'close', 'volume', 'stock_id', 'stock_name']
+            missing_columns = [col for col in required_columns if col not in features.columns]
+            if missing_columns:
+                self.logger.error(f"特徵文件缺少必要欄位: {missing_columns}")
                 return False
-                
+            
+            # 檢查日期格式
+            features['日期'] = pd.to_datetime(features['日期'])
+            
             # 檢查時間範圍
-            dates = list(features.keys())
-            if not dates:
+            if len(features) == 0:
                 self.logger.error(f"特徵文件無資料: {feature_file}")
                 return False
-                
-            # 解析文件名中的時間範圍
-            file_parts = feature_file.split('_')
-            if len(file_parts) >= 4:
-                expected_start = file_parts[-2]
-                expected_end = file_parts[-1].replace('.json', '')
-                
-                # 檢查特徵資料的時間範圍
-                start_date = min(dates)
-                end_date = max(dates)
-                
-                if start_date > expected_start or end_date < expected_end:
-                    self.logger.error(f"特徵文件時間範圍不符: {feature_file}")
-                    self.logger.error(f"預期範圍: {expected_start} - {expected_end}")
-                    self.logger.error(f"實際範圍: {start_date} - {end_date}")
-                    return False
-                    
+            
+            # 檢查特徵資料的時間範圍
+            start_date = pd.to_datetime(self.config.TEST_SETTING['start_date'])
+            end_date = pd.to_datetime(self.config.TEST_SETTING['end_date'])
+            data_start = features['日期'].min()
+            data_end = features['日期'].max()
+            
+            if data_start > start_date or data_end < end_date:
+                self.logger.error(f"特徵文件時間範圍不符: {feature_file}")
+                self.logger.error(f"預期範圍: {start_date.strftime('%Y-%m-%d')} - {end_date.strftime('%Y-%m-%d')}")
+                self.logger.error(f"實際範圍: {data_start.strftime('%Y-%m-%d')} - {data_end.strftime('%Y-%m-%d')}")
+                return False
+            
             return True
             
         except Exception as e:
@@ -183,23 +181,22 @@ class FeatureValidator:
             
             for file_name in existing_files:
                 file_path = self.config.features_path / file_name
-                with open(file_path, 'r', encoding='utf-8') as f:
-                    features = json.load(f)
-                    
+                features = pd.read_csv(file_path, encoding=self.config.ENCODING)
+                
                 # 檢查必要的特徵欄位
-                required_fields = ['open', 'high', 'low', 'close', 'volume']
-                for date, data in features.items():
-                    missing_fields = [field for field in required_fields if field not in data]
-                    if missing_fields:
-                        self.logger.error(
-                            f"文件 {file_name} 在日期 {date} 缺少必要欄位: {missing_fields}"
-                        )
-                        all_passed = False
-                        
+                required_columns = ['日期', 'open', 'high', 'low', 'close', 'volume']
+                missing_columns = [col for col in required_columns if col not in features.columns]
+                if missing_columns:
+                    self.logger.error(
+                        f"文件 {file_name} 缺少必要欄位: {missing_columns}"
+                    )
+                    all_passed = False
+                    continue
+                
                 # 檢查數值有效性
-                for date, data in features.items():
-                    if not self._validate_price_logic(data):
-                        self.logger.error(f"文件 {file_name} 在日期 {date} 的價格邏輯錯誤")
+                for _, row in features.iterrows():
+                    if not self._validate_price_logic(row):
+                        self.logger.error(f"文件 {file_name} 在日期 {row['日期']} 的價格邏輯錯誤")
                         all_passed = False
                         
             return all_passed
@@ -208,30 +205,30 @@ class FeatureValidator:
             self.logger.error(f"驗證數據完整性時發生錯誤: {str(e)}")
             return False
             
-    def _validate_price_logic(self, data: Dict) -> bool:
+    def _validate_price_logic(self, row: pd.Series) -> bool:
         """驗證價格邏輯
         
         Args:
-            data: 單日價格數據
+            row: 單日價格數據
             
         Returns:
             bool: 驗證是否通過
         """
         try:
             # 檢查價格是否為正數
-            if any(data[field] <= 0 for field in ['open', 'high', 'low', 'close']):
+            if any(row[field] <= 0 for field in ['open', 'high', 'low', 'close']):
                 return False
                 
             # 檢查最高價是否大於等於其他價格
-            if not (data['high'] >= data['open'] and 
-                   data['high'] >= data['low'] and 
-                   data['high'] >= data['close']):
+            if not (row['high'] >= row['open'] and 
+                   row['high'] >= row['low'] and 
+                   row['high'] >= row['close']):
                 return False
                 
             # 檢查最低價是否小於等於其他價格
-            if not (data['low'] <= data['open'] and 
-                   data['low'] <= data['high'] and 
-                   data['low'] <= data['close']):
+            if not (row['low'] <= row['open'] and 
+                   row['low'] <= row['high'] and 
+                   row['low'] <= row['close']):
                 return False
                 
             return True
@@ -249,26 +246,37 @@ class FeatureValidator:
             bool: 合併是否成功
         """
         try:
-            combined_features = {}
+            combined_features = pd.DataFrame()
             
             for file_name in existing_files:
                 file_path = self.config.features_path / file_name
                 try:
-                    with open(file_path, 'r', encoding='utf-8') as f:
-                        features = json.load(f)
-                        industry_name = file_name.split('_')[0]
-                        combined_features[industry_name] = features
+                    # 讀取特徵文件
+                    features = pd.read_csv(file_path, encoding=self.config.ENCODING)
+                    
+                    # 添加產業名稱
+                    industry_name = file_name.split('_')[0]
+                    features['industry'] = industry_name
+                    
+                    # 合併數據
+                    if combined_features.empty:
+                        combined_features = features
+                    else:
+                        combined_features = pd.concat([combined_features, features], ignore_index=True)
+                        
                 except Exception as e:
                     self.logger.error(f"讀取文件 {file_name} 時發生錯誤: {str(e)}")
                     continue
             
             # 儲存合併後的特徵
-            output_path = self.config.features_path / 'combined_features.json'
-            with open(output_path, 'w', encoding='utf-8') as f:
-                json.dump(combined_features, f, ensure_ascii=False, indent=2)
-                
-            self.logger.info(f"特徵合併完成，已儲存至: {output_path}")
-            return True
+            if not combined_features.empty:
+                output_path = self.config.features_path / 'combined_features.csv'
+                combined_features.to_csv(output_path, index=False, encoding=self.config.ENCODING)
+                self.logger.info(f"特徵合併完成，已儲存至: {output_path}")
+                return True
+            else:
+                self.logger.error("沒有可合併的特徵數據")
+                return False
             
         except Exception as e:
             self.logger.error(f"合併特徵文件時發生錯誤: {str(e)}")

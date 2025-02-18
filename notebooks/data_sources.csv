@@ -1,0 +1,9 @@
+資料類型,檔案路徑,更新頻率,資料格式,欄位說明
+股票交易資料,D:/Min/Python/Project/FA_Data/meta_data/all_stocks_data.csv,每日,CSV,"證券代號(str),證券名稱(str),成交股數(int),成交筆數(int),成交金額(int),開盤價(float),最高價(float),最低價(float),收盤價(float),漲跌(+/-)(str),漲跌價差(float),最後揭示買價(float)"
+公司基本資料,D:/Min/Python/Project/FA_Data/meta_data/companies.csv,不定期,CSV,"industry_category(str),stock_id(str),stock_name(str),type(str),date(str:YYYY-MM-DD),download_time(str:YYYY-MM-DD HH:mm:ss)"
+產業指數資料,D:/Min/Python/Project/FA_Data/meta_data/industry_index.csv,每日,CSV,"指數名稱(str),收盤指數(float),漲跌(str),漲跌點數(float),漲跌百分比(float),日期(str:YYYY-MM-DD)"
+台灣加權指數,D:/Min/Python/Project/FA_Data/meta_data/market_index.csv,每日,CSV,"Date(str:YYYY-MM-DD),Open(float),High(float),Low(float),Close(float),Adj Close(float),Volume(int)"
+週度產業相關性分析,D:/Min/Python/Project/FA_Data/industry_correlation/weekly/industry_correlation_{date}.csv,週,CSV,"industry_1(str),industry_2(str),correlation(float),p_value(float),sample_size(int)"
+月度產業相關性分析,D:/Min/Python/Project/FA_Data/industry_correlation/monthly/industry_correlation_{date}.csv,月,CSV,"industry_1(str),industry_2(str),correlation(float),p_value(float),sample_size(int)"
+產業價格指數分析,D:/Min/Python/Project/FA_Data/industry_analysis/price_index/{industry}_{start_date}_{end_date}_{generate_date}.csv,每日,CSV,"date(str:YYYY-MM-DD),index_value(float),change_ratio(float),ma5(float),ma20(float),volatility(float),trend_strength(float),generate_time(str:YYYY-MM-DD HH:mm:ss)"
+產業報酬指數分析,D:/Min/Python/Project/FA_Data/industry_analysis/return_index/{industry}_{start_date}_{end_date}_{generate_date}.csv,每日,CSV,"date(str:YYYY-MM-DD),return_value(float),cumulative_return(float),daily_return(float),volatility(float),sharpe_ratio(float),generate_time(str:YYYY-MM-DD HH:mm:ss)" 
