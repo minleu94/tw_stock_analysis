@@ -1,0 +1,178 @@
+2025-02-11 13:29:09,679 [INFO] FeatureGeneration: 開始特徵生成流程...
+2025-02-11 13:29:09,679 [INFO] FeatureGeneration: 處理時間範圍: 2024-11-13 到 2025-02-11
+2025-02-11 13:29:09,679 [INFO] FeatureGeneration: 處理股票數量: 5
+2025-02-11 13:29:09,681 [INFO] FeatureGeneration: 初始化特徵管理器...
+2025-02-11 13:29:09,681 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-11 13:29:09,838 [INFO] FeatureGeneration: 開始生成特徵...
+2025-02-11 13:29:09,872 [INFO] FeatureConfig: 已備份 companies.csv 到 C:\Users\archi\Python\Project\tw_stock_analysis\backup\companies_20250211_132909.csv
+2025-02-11 13:29:09,889 [INFO] FeatureConfig: 已備份 industry_index.csv 到 C:\Users\archi\Python\Project\tw_stock_analysis\backup\industry_index_20250211_132909.csv
+2025-02-11 13:29:09,921 [INFO] FeatureConfig: 已備份 market_index.csv 到 C:\Users\archi\Python\Project\tw_stock_analysis\backup\market_index_20250211_132909.csv
+2025-02-11 13:29:10,071 [INFO] FeatureConfig: 已備份 stock_data_whole.csv 到 C:\Users\archi\Python\Project\tw_stock_analysis\backup\stock_data_whole_20250211_132909.csv
+2025-02-11 13:29:10,642 [INFO] FeatureConfig: 已備份 all_stocks_data.csv 到 C:\Users\archi\Python\Project\tw_stock_analysis\backup\all_stocks_data_20250211_132910.csv
+2025-02-11 13:29:10,643 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-11 13:29:16,280 [INFO] FeatureManager: 處理股票 2330...
+2025-02-11 13:29:16,407 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-11 13:29:21,704 [WARNING] FeatureManager: 找不到股票 2330 的技術指標檔案: D:\Min\Python\Project\FA_Data\technical_analysis\2330_technical.csv
+2025-02-11 13:29:21,704 [INFO] FeatureManager: 處理股票 2317...
+2025-02-11 13:29:21,821 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-11 13:29:28,073 [WARNING] FeatureManager: 找不到股票 2317 的技術指標檔案: D:\Min\Python\Project\FA_Data\technical_analysis\2317_technical.csv
+2025-02-11 13:29:28,073 [INFO] FeatureManager: 處理股票 1101...
+2025-02-11 13:29:28,183 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-11 13:29:33,796 [WARNING] FeatureManager: 找不到股票 1101 的技術指標檔案: D:\Min\Python\Project\FA_Data\technical_analysis\1101_technical.csv
+2025-02-11 13:29:33,799 [INFO] FeatureManager: 處理股票 2891...
+2025-02-11 13:29:33,933 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-11 13:29:39,785 [WARNING] FeatureManager: 找不到股票 2891 的技術指標檔案: D:\Min\Python\Project\FA_Data\technical_analysis\2891_technical.csv
+2025-02-11 13:29:39,785 [INFO] FeatureManager: 處理股票 2303...
+2025-02-11 13:29:39,955 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-11 13:29:46,119 [WARNING] FeatureManager: 找不到股票 2303 的技術指標檔案: D:\Min\Python\Project\FA_Data\technical_analysis\2303_technical.csv
+2025-02-11 13:29:46,119 [INFO] FeatureManager: 處理報告已生成: D:\Min\Python\Project\FA_Data\meta_data\feature_generation_report.txt
+2025-02-11 13:29:46,170 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,171 [ERROR] FeatureManager: 生成產業 水泥工業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,171 [ERROR] FeatureManager: 處理產業 水泥工業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,174 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,174 [ERROR] FeatureManager: 生成產業 其他業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,174 [ERROR] FeatureManager: 處理產業 其他業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,180 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,181 [ERROR] FeatureManager: 生成產業 食品工業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,181 [ERROR] FeatureManager: 處理產業 食品工業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,185 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,185 [ERROR] FeatureManager: 生成產業 電器電纜業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,188 [ERROR] FeatureManager: 處理產業 電器電纜業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,189 [INFO] FeatureManager: 農業生技類: 無對應指數，跳過處理
+2025-02-11 13:29:46,192 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,193 [ERROR] FeatureManager: 生成產業 觀光業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,194 [ERROR] FeatureManager: 處理產業 觀光業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,197 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,197 [ERROR] FeatureManager: 生成產業 觀光餐旅業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,197 [ERROR] FeatureManager: 處理產業 觀光餐旅業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,200 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,201 [ERROR] FeatureManager: 生成產業 生技醫療業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,201 [ERROR] FeatureManager: 處理產業 生技醫療業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,203 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,204 [ERROR] FeatureManager: 生成產業 塑膠工業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,204 [ERROR] FeatureManager: 處理產業 塑膠工業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,209 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,209 [ERROR] FeatureManager: 生成產業 建材營造業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,209 [ERROR] FeatureManager: 處理產業 建材營造業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,212 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,212 [ERROR] FeatureManager: 生成產業 汽車工業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,212 [ERROR] FeatureManager: 處理產業 汽車工業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,213 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,213 [ERROR] FeatureManager: 生成產業 電子零組件業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,213 [ERROR] FeatureManager: 處理產業 電子零組件業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,213 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,213 [ERROR] FeatureManager: 生成產業 綠能環保業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,220 [ERROR] FeatureManager: 處理產業 綠能環保業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,224 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,224 [ERROR] FeatureManager: 生成產業 紡織纖維業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,225 [ERROR] FeatureManager: 處理產業 紡織纖維業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,227 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,227 [ERROR] FeatureManager: 生成產業 貿易百貨業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,227 [ERROR] FeatureManager: 處理產業 貿易百貨業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,232 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,233 [ERROR] FeatureManager: 生成產業 運動休閒業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,233 [ERROR] FeatureManager: 處理產業 運動休閒業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,236 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,236 [ERROR] FeatureManager: 生成產業 電子工業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,237 [ERROR] FeatureManager: 處理產業 電子工業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,242 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,242 [ERROR] FeatureManager: 生成產業 鋼鐵工業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,243 [ERROR] FeatureManager: 處理產業 鋼鐵工業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,244 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,244 [ERROR] FeatureManager: 生成產業 電機機械業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,244 [ERROR] FeatureManager: 處理產業 電機機械業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,250 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,250 [ERROR] FeatureManager: 生成產業 電腦及週邊設備業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,251 [ERROR] FeatureManager: 處理產業 電腦及週邊設備業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,254 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,254 [ERROR] FeatureManager: 生成產業 化學生技醫療業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,255 [ERROR] FeatureManager: 處理產業 化學生技醫療業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,260 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,261 [ERROR] FeatureManager: 生成產業 化學工業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,263 [ERROR] FeatureManager: 處理產業 化學工業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,267 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,267 [ERROR] FeatureManager: 生成產業 其他電子業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,268 [ERROR] FeatureManager: 處理產業 其他電子業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,276 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,278 [ERROR] FeatureManager: 生成產業 玻璃陶瓷業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,279 [ERROR] FeatureManager: 處理產業 玻璃陶瓷業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,284 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,284 [ERROR] FeatureManager: 生成產業 造紙工業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,285 [ERROR] FeatureManager: 處理產業 造紙工業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,288 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,288 [ERROR] FeatureManager: 生成產業 居家生活業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,289 [ERROR] FeatureManager: 處理產業 居家生活業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,293 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,294 [ERROR] FeatureManager: 生成產業 橡膠工業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,294 [ERROR] FeatureManager: 處理產業 橡膠工業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,295 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,295 [ERROR] FeatureManager: 生成產業 航運業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,295 [ERROR] FeatureManager: 處理產業 航運業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,305 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,306 [ERROR] FeatureManager: 生成產業 半導體業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,307 [ERROR] FeatureManager: 處理產業 半導體業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,315 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,315 [ERROR] FeatureManager: 生成產業 通信網路業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,317 [ERROR] FeatureManager: 處理產業 通信網路業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,320 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,321 [ERROR] FeatureManager: 生成產業 光電業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,321 [ERROR] FeatureManager: 處理產業 光電業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,324 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,325 [ERROR] FeatureManager: 生成產業 電子通路業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,325 [ERROR] FeatureManager: 處理產業 電子通路業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,326 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,326 [ERROR] FeatureManager: 生成產業 資訊服務業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,326 [ERROR] FeatureManager: 處理產業 資訊服務業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,333 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,334 [ERROR] FeatureManager: 生成產業 油電燃氣業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,334 [ERROR] FeatureManager: 處理產業 油電燃氣業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,337 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,337 [ERROR] FeatureManager: 生成產業 數位雲端業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,337 [ERROR] FeatureManager: 處理產業 數位雲端業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,341 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,341 [ERROR] FeatureManager: 生成產業 金融保險業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,342 [ERROR] FeatureManager: 處理產業 金融保險業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,342 [INFO] FeatureManager: 文化創意類: 無對應指數，跳過處理
+2025-02-11 13:29:46,349 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,350 [ERROR] FeatureManager: 生成產業 電子商務業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,351 [ERROR] FeatureManager: 處理產業 電子商務業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,354 [ERROR] FeatureManager: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,354 [ERROR] FeatureManager: 生成產業 金融業 特徵時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,354 [ERROR] FeatureManager: 處理產業 金融業 時發生錯誤: 缺少必要欄位: 開盤價, 最高價, 最低價, 收盤價, 成交股數
+2025-02-11 13:29:46,356 [INFO] FeatureManager: 產業處理報告已生成: D:\Min\Python\Project\FA_Data\meta_data\industry_feature_generation_report.txt
+2025-02-11 13:29:46,356 [ERROR] FeatureGeneration: 特徵生成失敗
+2025-02-11 13:29:46,356 [INFO] FeatureGeneration: 特徵生成流程結束，總執行時間: 0:00:36.676520
+2025-02-11 13:29:46,357 [INFO] FeatureGeneration: 最終記憶體使用: 94.22 MB
+2025-02-11 13:29:46,357 [INFO] FeatureGeneration: 特徵生成流程結束
+2025-02-11 13:30:40,491 [INFO] FeatureGeneration: 開始特徵生成流程...
+2025-02-11 13:30:40,491 [INFO] FeatureGeneration: 處理時間範圍: 2024-11-13 到 2025-02-11
+2025-02-11 13:30:40,491 [INFO] FeatureGeneration: 處理股票數量: 5
+2025-02-11 13:30:40,491 [INFO] FeatureGeneration: 初始化特徵管理器...
+2025-02-11 13:30:40,554 [INFO] FeatureGeneration: 開始生成特徵...
+2025-02-11 13:31:23,037 [ERROR] FeatureGeneration: 特徵生成失敗
+2025-02-11 13:31:23,037 [INFO] FeatureGeneration: 特徵生成流程結束
+2025-02-11 13:41:35,453 [INFO] FeatureGeneration: 開始特徵生成流程...
+2025-02-11 13:41:35,455 [INFO] FeatureGeneration: 處理時間範圍: 2024-11-13 到 2025-02-11
+2025-02-11 13:41:35,455 [INFO] FeatureGeneration: 處理股票數量: 5
+2025-02-11 13:41:35,455 [INFO] FeatureGeneration: 初始化特徵管理器...
+2025-02-11 13:41:35,535 [INFO] FeatureGeneration: 開始生成特徵...
+2025-02-11 13:42:18,201 [ERROR] FeatureGeneration: 特徵生成失敗
+2025-02-11 13:42:18,202 [INFO] FeatureGeneration: 特徵生成流程結束
+2025-02-11 13:43:00,595 [INFO] FeatureGeneration: 開始特徵生成流程...
+2025-02-11 13:43:00,595 [INFO] FeatureGeneration: 處理時間範圍: 2024-11-13 到 2025-02-11
+2025-02-11 13:43:00,595 [INFO] FeatureGeneration: 處理股票數量: 5
+2025-02-11 13:43:00,595 [INFO] FeatureGeneration: 初始化特徵管理器...
+2025-02-11 13:43:00,652 [INFO] FeatureGeneration: 開始生成特徵...
+2025-02-11 13:43:37,200 [INFO] FeatureGeneration: 特徵生成完成
+2025-02-11 13:43:37,200 [INFO] FeatureGeneration: 開始驗證特徵...
+2025-02-11 13:43:37,237 [WARNING] FeatureGeneration: 特徵驗證發現問題
+2025-02-11 13:43:37,238 [INFO] FeatureGeneration: 特徵生成流程結束
+2025-02-11 13:46:14,167 [INFO] FeatureGeneration: 開始特徵生成流程...
+2025-02-11 13:46:14,167 [INFO] FeatureGeneration: 處理時間範圍: 2024-11-13 到 2025-02-11
+2025-02-11 13:46:14,167 [INFO] FeatureGeneration: 處理股票數量: 5
+2025-02-11 13:46:14,168 [INFO] FeatureGeneration: 初始化特徵管理器...
+2025-02-11 13:46:14,231 [INFO] FeatureGeneration: 開始生成特徵...
+2025-02-11 13:47:03,671 [INFO] FeatureGeneration: 特徵生成完成
+2025-02-11 13:47:03,672 [INFO] FeatureGeneration: 開始驗證特徵...
+2025-02-11 13:47:03,689 [WARNING] FeatureGeneration: 特徵驗證發現問題
+2025-02-11 13:47:03,689 [INFO] FeatureGeneration: 特徵生成流程結束

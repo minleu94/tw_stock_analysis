@@ -1,0 +1,58 @@
+﻿2025-02-10 14:34:45 [INFO] FeatureConfig: 已備份 companies.csv 到 C:\Users\archi\Python\Project\tw_stock_analysis\backup\companies_20250210_143445.csv
+2025-02-10 14:34:45 [INFO] FeatureConfig: 已備份 industry_index.csv 到 C:\Users\archi\Python\Project\tw_stock_analysis\backup\industry_index_20250210_143445.csv
+2025-02-10 14:34:45 [INFO] FeatureConfig: 已備份 market_index.csv 到 C:\Users\archi\Python\Project\tw_stock_analysis\backup\market_index_20250210_143445.csv
+2025-02-10 14:34:45 [INFO] FeatureConfig: 已備份 stock_data_whole.csv 到 C:\Users\archi\Python\Project\tw_stock_analysis\backup\stock_data_whole_20250210_143445.csv
+2025-02-10 14:34:46 [INFO] FeatureConfig: 已備份 all_stocks_data.csv 到 C:\Users\archi\Python\Project\tw_stock_analysis\backup\all_stocks_data_20250210_143445.csv
+2025-02-10 14:34:46 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:34:51 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:34:58 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:35:06 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:35:14 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:35:21 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:36:04 [INFO] FeatureConfig: 今天已有 companies.csv 的備份且文件未變化，跳過備份
+2025-02-10 14:36:04 [INFO] FeatureConfig: 今天已有 industry_index.csv 的備份且文件未變化，跳過備份
+2025-02-10 14:36:04 [INFO] FeatureConfig: 今天已有 market_index.csv 的備份且文件未變化，跳過備份
+2025-02-10 14:36:04 [INFO] FeatureConfig: 今天已有 stock_data_whole.csv 的備份且文件未變化，跳過備份
+2025-02-10 14:36:04 [INFO] FeatureConfig: 今天已有 all_stocks_data.csv 的備份且文件未變化，跳過備份
+2025-02-10 14:36:04 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:36:10 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:36:17 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:36:24 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:36:31 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:36:37 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:38:32 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:38:32 [INFO] FeatureConfig: 今天已有 companies.csv 的備份且文件未變化，跳過備份
+2025-02-10 14:38:32 [INFO] FeatureConfig: 今天已有 industry_index.csv 的備份且文件未變化，跳過備份
+2025-02-10 14:38:32 [INFO] FeatureConfig: 今天已有 market_index.csv 的備份且文件未變化，跳過備份
+2025-02-10 14:38:32 [INFO] FeatureConfig: 今天已有 stock_data_whole.csv 的備份且文件未變化，跳過備份
+2025-02-10 14:38:32 [INFO] FeatureConfig: 今天已有 all_stocks_data.csv 的備份且文件未變化，跳過備份
+2025-02-10 14:38:32 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:38:37 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:38:43 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:38:50 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:38:57 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:39:04 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:41:58 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:41:58 [INFO] FeatureConfig: 今天已有 companies.csv 的備份且文件未變化，跳過備份
+2025-02-10 14:41:58 [INFO] FeatureConfig: 今天已有 industry_index.csv 的備份且文件未變化，跳過備份
+2025-02-10 14:41:58 [INFO] FeatureConfig: 今天已有 market_index.csv 的備份且文件未變化，跳過備份
+2025-02-10 14:41:58 [INFO] FeatureConfig: 今天已有 stock_data_whole.csv 的備份且文件未變化，跳過備份
+2025-02-10 14:41:58 [INFO] FeatureConfig: 今天已有 all_stocks_data.csv 的備份且文件未變化，跳過備份
+2025-02-10 14:41:58 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:42:04 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:42:10 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:42:18 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:42:24 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 14:42:30 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 17:31:58 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 17:31:59 [INFO] FeatureConfig: 今天已有 companies.csv 的備份且文件未變化，跳過備份
+2025-02-10 17:31:59 [INFO] FeatureConfig: 今天已有 industry_index.csv 的備份且文件未變化，跳過備份
+2025-02-10 17:31:59 [INFO] FeatureConfig: 今天已有 market_index.csv 的備份且文件未變化，跳過備份
+2025-02-10 17:31:59 [INFO] FeatureConfig: 今天已有 stock_data_whole.csv 的備份且文件未變化，跳過備份
+2025-02-10 17:31:59 [INFO] FeatureConfig: 今天已有 all_stocks_data.csv 的備份且文件未變化，跳過備份
+2025-02-10 17:31:59 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 17:32:05 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 17:32:11 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 17:32:18 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 17:32:24 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
+2025-02-10 17:32:34 [INFO] FeatureConfig: 使用股票資料: D:\Min\Python\Project\FA_Data\meta_data\stock_data_whole.csv
