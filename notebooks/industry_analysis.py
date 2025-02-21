@@ -31,6 +31,11 @@ class IndustryAnalysisSystem:
     """產業分析系統"""
     
     def __init__(self, base_path: str = "D:/Min/Python/Project/FA_Data"):
+        """初始化產業分析系統
+        
+        Args:
+            base_path: 基礎路徑
+        """
         self.base_path = Path(base_path)
         self.logger = logging.getLogger(self.__class__.__name__)
         
@@ -257,66 +262,76 @@ class IndustryAnalysisSystem:
         try:
             # 遍歷所有產業
             for industry_name in self.industry_mapping.keys():
-                # 獲取產業表現數據
-                industry_data = self.get_industry_performance(
-                    industry_name=industry_name,
-                    start_date=start_date,
-                    end_date=end_date
-                )
-                
-                if industry_data.empty:
-                    self.logger.warning(f"無法獲取 {industry_name} 的產業數據")
-                    continue
-                
-                # 獲取產業內的股票
-                industry_stocks = self.get_industry_stocks(industry_name)
-                
-                # 計算時間序列分析
-                time_series_analysis = self._calculate_time_series_analysis(industry_data)
-                
-                # 計算風險分析
-                risk_analysis = self._calculate_risk_analysis(industry_data)
-                
-                # 計算輪動分析
-                rotation_analysis = self._calculate_rotation_analysis(industry_data)
-                
-                # 生成投資建議
-                investment_suggestions = self._generate_investment_suggestions(
-                    time_series_analysis,
-                    risk_analysis,
-                    rotation_analysis
-                )
-                
-                # 獲取資料的實際日期範圍
-                data_start = industry_data['日期'].min().strftime('%Y%m%d')
-                data_end = industry_data['日期'].max().strftime('%Y%m%d')
-                current_date = '20250211'  # 使用固定的日期
-                
-                # 準備分析數據
-                analysis_data = {
-                    "basic_info": {
-                        "industry_name": industry_name,
-                        "period": {
-                            "data_range": {
-                                "start": data_start,
-                                "end": data_end
+                try:
+                    # 獲取產業表現數據
+                    industry_data = self.get_industry_performance(
+                        industry_name=industry_name,
+                        start_date=start_date,
+                        end_date=end_date
+                    )
+                    
+                    if industry_data.empty:
+                        self.logger.warning(f"無法獲取 {industry_name} 的產業數據")
+                        continue
+                    
+                    # 獲取產業內的股票
+                    industry_stocks = self.get_industry_stocks(industry_name)
+                    
+                    # 計算時間序列分析
+                    time_series_analysis = self._calculate_time_series_analysis(industry_data)
+                    
+                    # 計算風險分析
+                    risk_analysis = self._calculate_risk_analysis(industry_data)
+                    
+                    # 計算輪動分析
+                    rotation_analysis = self._calculate_rotation_analysis(industry_data)
+                    
+                    # 生成投資建議
+                    investment_suggestions = self._generate_investment_suggestions(
+                        time_series_analysis,
+                        risk_analysis,
+                        rotation_analysis
+                    )
+                    
+                    # 獲取資料的實際日期範圍
+                    data_start = industry_data['日期'].min().strftime('%Y%m%d')
+                    data_end = industry_data['日期'].max().strftime('%Y%m%d')
+                    current_date = '20250211'  # 使用固定的日期
+                    
+                    # 準備分析數據
+                    analysis_data = {
+                        "basic_info": {
+                            "industry_name": industry_name,
+                            "period": {
+                                "data_range": {
+                                    "start": data_start,
+                                    "end": data_end
+                                },
+                                "report_date": current_date
                             },
-                            "report_date": current_date
+                            "stocks": industry_stocks
                         },
-                        "stocks": industry_stocks
-                    },
-                    "time_series_analysis": time_series_analysis,
-                    "risk_analysis": risk_analysis,
-                    "rotation_analysis": rotation_analysis,
-                    "investment_suggestions": investment_suggestions
-                }
-                
-                # 儲存價格指數分析
-                price_file = self.base_path / 'industry_analysis' / 'price_index' / f"{industry_name}_{data_start}_{data_end}_{current_date}.json"
-                with open(price_file, 'w', encoding='utf-8') as f:
-                    json.dump(analysis_data, f, ensure_ascii=False, indent=2)
-                
-                self.logger.info(f"成功生成 {industry_name} 的產業分析檔案")
+                        "time_series_analysis": time_series_analysis,
+                        "risk_analysis": risk_analysis,
+                        "rotation_analysis": rotation_analysis,
+                        "investment_suggestions": investment_suggestions
+                    }
+                    
+                    # 儲存價格指數分析
+                    price_file = self.base_path / 'industry_analysis' / 'price_index' / f"{industry_name}_{data_start}_{data_end}_{current_date}.json"
+                    
+                    # 確保目錄存在
+                    price_file.parent.mkdir(parents=True, exist_ok=True)
+                    
+                    # 使用 'utf-8-sig' 編碼寫入 JSON 檔案
+                    with open(str(price_file), 'w', encoding='utf-8-sig') as f:
+                        json.dump(analysis_data, f, ensure_ascii=False, indent=2)
+                    
+                    self.logger.info(f"成功生成 {industry_name} 的產業分析檔案: {price_file.name}")
+                    
+                except Exception as e:
+                    self.logger.error(f"處理產業 {industry_name} 時發生錯誤: {str(e)}")
+                    continue
                 
         except Exception as e:
             self.logger.error(f"生成產業分析檔案時發生錯誤: {str(e)}")

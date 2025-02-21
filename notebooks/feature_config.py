@@ -12,8 +12,8 @@ class FeatureConfig:
     """特徵生成器配置類別"""
     
     # 基礎路徑設定
-    PROJECT_DIR: str = "D:/Min/Python/Project/FA_Data"
-    DATA_DIR: str = "D:/Min/Python/Project/FA_Data"
+    PROJECT_DIR: str = str(Path(__file__).parent)  # 使用當前文件所在目錄作為專案目錄
+    DATA_DIR: str = "D:/Min/Python/Project/FA_Data"  # 固定的資料目錄
     META_DATA_DIR: str = "meta_data"
     TEST_DATA_DIR: str = "test_data"
     LOG_DIR: str = "logs"
@@ -69,8 +69,8 @@ class FeatureConfig:
     
     # 測試資料設定
     TEST_SETTING: Dict = field(default_factory=lambda: {
-        'test_stocks': ['2330', '2317', '1101', '2891', '2303'],
-        'start_date': '2023-01-01',
+        'test_stocks': ['2330', '2317'],
+        'start_date': '2023-01-03',
         'end_date': '2024-11-12'
     })
     
@@ -93,7 +93,7 @@ class FeatureConfig:
         self._technical_analysis_path = self._data_path / self.TECHNICAL_ANALYSIS_DIR
         self._industry_analysis_path = self._data_path / self.INDUSTRY_ANALYSIS_DIR
         self._industry_correlation_path = self._data_path / self.INDUSTRY_CORRELATION_DIR
-        self._log_path = self._data_path / self.LOG_DIR
+        self._log_path = self._project_path / self.LOG_DIR
         self._backup_path = self._data_path / self.BACKUP_DIR
         
         # 創建必要的目錄
@@ -162,9 +162,21 @@ class FeatureConfig:
     def backup_path(self) -> Path:
         return self._backup_path
     
-    def get_feature_filename(self, stock_id: str) -> str:
+    def get_feature_filename(self, stock_id: str, industry_name: Optional[str] = None) -> str:
         """獲取特徵檔案名稱"""
-        return f"{stock_id}_features.csv"
+        start_date = self.TEST_SETTING['start_date'].replace('-', '')
+        end_date = self.TEST_SETTING['end_date'].replace('-', '')
+        process_date = datetime.now().strftime('%Y%m%d')
+        if industry_name:
+            return f"{stock_id}_{industry_name}_{start_date}_{end_date}_{process_date}.csv"
+        return f"{stock_id}_features_{start_date}_{end_date}_{process_date}.csv"
+    
+    def get_combined_feature_filename(self) -> str:
+        """獲取合併特徵檔案名稱"""
+        start_date = self.TEST_SETTING['start_date'].replace('-', '')
+        end_date = self.TEST_SETTING['end_date'].replace('-', '')
+        process_date = datetime.now().strftime('%Y%m%d')
+        return f"combined_features_{start_date}_{end_date}_{process_date}.csv"
     
     def get_stock_data_path(self) -> Path:
         """獲取股票數據檔案路徑"""
@@ -199,31 +211,28 @@ class FeatureConfig:
         
         return name
         
-    def get_industry_price_index_path(self, industry_name: str, start_date: str, end_date: str) -> Path:
-        """獲取產業價格指數分析檔案路徑
-        
+    def get_industry_price_index_path(self, industry_name: str) -> Path:
+        """
+        取得產業指數檔案的路徑
         Args:
             industry_name: 產業名稱
-            start_date: 開始日期 (YYYYMMDD)
-            end_date: 結束日期 (YYYYMMDD)
-            
         Returns:
-            Path: 產業價格指數分析檔案路徑
+            Path: 產業指數檔案的路徑
         """
-        try:
-            # 生成檔案名稱（使用原始產業名稱）
-            file_name = f"{industry_name}_{start_date}_{end_date}_20250211.json"
-            
-            # 構建完整路徑
-            file_path = self.industry_analysis_path / self.INDUSTRY_PRICE_INDEX_DIR / file_name
-            
-            if not file_path.parent.exists():
-                file_path.parent.mkdir(parents=True, exist_ok=True)
-            
-            return file_path
-            
-        except Exception as e:
-            raise
+        # 標準化產業名稱
+        industry_name = self._standardize_industry_name(industry_name)
+        
+        # 從產業對照檔案中取得對應的分析檔案名稱
+        mapping_df = pd.read_csv(self.meta_data_path / 'industry_mapping_analysis.csv')
+        matched_row = mapping_df[mapping_df['標準化產業'] == industry_name]
+        
+        if not matched_row.empty:
+            analysis_file_name = matched_row['產業分析檔案'].iloc[0]
+            # 使用固定的日期格式
+            file_name = f"{analysis_file_name}_20230101_20250122_20250122.json"
+            return self.industry_analysis_path / 'price_index' / file_name
+        else:
+            raise ValueError(f"找不到產業 {industry_name} 的對應分析檔案名稱")
 
     def get_industry_return_index_path(self, industry_name: str, start_date: str, end_date: str) -> Path:
         """獲取產業報酬指數分析檔案路徑
@@ -260,7 +269,7 @@ class FeatureConfig:
     def get_industry_correlation_weekly_path(self, date: str) -> Path:
         """獲取週度產業關聯性文件路徑"""
         filename = self.INDUSTRY_CORRELATION_WEEKLY_PATTERN.format(date=date)
-        path = self.industry_correlation_weekly_path / filename
+        path = self.industry_correlation_path / filename
         if self._logger:
             self._logger.info(f"週度產業關聯性路徑: {path}")
         return path
@@ -268,7 +277,7 @@ class FeatureConfig:
     def get_industry_correlation_monthly_path(self, date: str) -> Path:
         """獲取月度產業關聯性文件路徑"""
         filename = self.INDUSTRY_CORRELATION_MONTHLY_PATTERN.format(date=date)
-        path = self.industry_correlation_monthly_path / filename
+        path = self.industry_correlation_path / filename
         if self._logger:
             self._logger.info(f"月度產業關聯性路徑: {path}")
         return path 

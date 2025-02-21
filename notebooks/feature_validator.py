@@ -102,7 +102,7 @@ class FeatureValidator:
                 continue
                 
             # 檢查特徵文件
-            feature_filename = self.config.get_feature_filename(stock_id)
+            feature_filename = self.config.get_feature_filename(stock_id, industry_name)
             feature_path = self.config.features_path / feature_filename
             
             if not feature_path.exists():
@@ -282,10 +282,7 @@ class FeatureValidator:
             self.logger.error(f"合併特徵文件時發生錯誤: {str(e)}")
             return False
             
-    def _log_validation_results(self, 
-                             existing_files: List[str], 
-                             missing_files: List[str], 
-                             industry_status: Dict[str, str]):
+    def _log_validation_results(self, existing_files: List[str], missing_files: List[str], industry_status: Dict[str, str]) -> None:
         """記錄驗證結果
         
         Args:
@@ -293,17 +290,35 @@ class FeatureValidator:
             missing_files: 缺失的文件列表
             industry_status: 產業狀態字典
         """
-        self.logger.info("\n產業特徵文件狀態報告：")
-        self.logger.info("-" * 50)
-        for industry, status in industry_status.items():
-            self.logger.info(f"{industry}: {status}")
+        report_path = self.config.meta_data_path / 'feature_validation_report.txt'
+        
+        with open(report_path, 'w', encoding=self.config.ENCODING) as f:
+            f.write("=== 特徵驗證報告 ===\n\n")
             
-        self.logger.info("\n詳細的特徵文件列表：")
-        self.logger.info("-" * 50)
-        for file in existing_files:
-            self.logger.info(f"- {file}")
+            # 記錄時間
+            f.write(f"驗證時間: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
             
-        self.logger.info("\n缺失的產業特徵：")
-        self.logger.info("-" * 50)
-        for industry in missing_files:
-            self.logger.info(f"- {industry}") 
+            # 記錄文件統計
+            f.write("文件統計:\n")
+            f.write(f"- 存在的文件數量: {len(existing_files)}\n")
+            f.write(f"- 缺失的文件數量: {len(missing_files)}\n\n")
+            
+            # 記錄產業狀態
+            f.write("產業狀態:\n")
+            for industry, status in industry_status.items():
+                f.write(f"- {industry}: {status}\n")
+            f.write("\n")
+            
+            # 記錄存在的文件
+            if existing_files:
+                f.write("存在的文件:\n")
+                for file in existing_files:
+                    f.write(f"- {file}\n")
+                f.write("\n")
+            
+            # 記錄缺失的文件
+            if missing_files:
+                f.write("缺失的文件:\n")
+                for file in missing_files:
+                    f.write(f"- {file}\n")
+                f.write("\n") 
