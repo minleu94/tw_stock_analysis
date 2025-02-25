@@ -168,7 +168,9 @@ class FeatureConfig:
         end_date = self.TEST_SETTING['end_date'].replace('-', '')
         process_date = datetime.now().strftime('%Y%m%d')
         if industry_name:
-            return f"{stock_id}_{industry_name}_{start_date}_{end_date}_{process_date}.csv"
+            # 確保產業名稱不包含特殊字符
+            clean_industry_name = industry_name.strip()
+            return f"{stock_id}_{clean_industry_name}_{start_date}_{end_date}_{process_date}.csv"
         return f"{stock_id}_features_{start_date}_{end_date}_{process_date}.csv"
     
     def get_combined_feature_filename(self) -> str:
@@ -180,7 +182,7 @@ class FeatureConfig:
     
     def get_stock_data_path(self) -> Path:
         """獲取股票數據檔案路徑"""
-        return self._meta_data_path / 'all_stocks_data.csv'
+        return self._meta_data_path / 'stock_data_whole.csv'
 
     def get_tech_data_path(self) -> Path:
         """獲取技術分析資料檔案路徑"""

@@ -25,7 +25,10 @@ def main():
         
         # 驗證特徵檔案
         logger.info("開始驗證特徵檔案...")
-        existing_files, missing_files, industry_status = validator.validate_features()
+        validation_result = validator.validate_features()
+        
+        # 獲取文件結構信息（需要單獨調用）
+        existing_files, missing_files, industry_status = validator._validate_file_structure()
         
         # 輸出驗證結果
         logger.info("\n產業特徵檔案狀態報告：")
@@ -57,6 +60,12 @@ def main():
             logger.info("特徵合併完成")
         else:
             logger.error("特徵合併失敗")
+            
+        # 輸出整體驗證結果
+        if validation_result:
+            logger.info("特徵驗證全部通過")
+        else:
+            logger.warning("特徵驗證發現問題")
             
     except Exception as e:
         logger.error(f"執行過程中發生錯誤: {str(e)}")

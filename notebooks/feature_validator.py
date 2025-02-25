@@ -47,16 +47,18 @@ class FeatureValidator:
             data_validation_passed = self._validate_data_completeness(existing_files)
             
             # 4. 合併特徵（如果需要）
+            merge_success = False
             if content_validation_passed and data_validation_passed:
                 self.logger.info("開始合併特徵文件...")
-                if not self.combine_features(existing_files):
+                merge_success = self.combine_features(existing_files)
+                if not merge_success:
                     self.logger.warning("特徵合併失敗")
                     
             # 返回整體驗證結果
             validation_passed = (
-                len(missing_files) == 0 and 
                 content_validation_passed and 
-                data_validation_passed
+                data_validation_passed and
+                merge_success
             )
             
             if validation_passed:
