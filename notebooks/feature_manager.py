@@ -11,6 +11,8 @@ import psutil
 import talib as ta
 import json
 import os
+import sys
+import time
 
 from feature_config import FeatureConfig
 
@@ -1617,6 +1619,136 @@ class FeatureManager:
             
         except Exception as e:
             self.logger.error(f"生成模擬數據時發生錯誤: {str(e)}")
+            return False
+
+    def save_features(self, df: pd.DataFrame, stock_id: str, industry: str) -> bool:
+        """儲存特徵檔案
+        
+        Args:
+            df: 特徵數據框
+            stock_id: 股票代碼
+            industry: 產業名稱
+            
+        Returns:
+            bool: 儲存是否成功
+        """
+        try:
+            import sys
+            import os
+            import time
+            
+            # 確保目錄存在
+            self.config.features_path.mkdir(parents=True, exist_ok=True)
+            
+            # 獲取日期範圍
+            start_date = df['日期'].min().strftime('%Y%m%d')
+            end_date = df['日期'].max().strftime('%Y%m%d')
+            current_date = datetime.now().strftime('%Y%m%d')
+            
+            # 生成檔案名稱
+            filename = f"{stock_id}_{industry}_{start_date}_{end_date}_{current_date}.csv"
+            filepath = self.config.features_path / filename
+            
+            # 直接輸出到標準錯誤，確保可以看到日誌
+            sys.stderr.write(f"DEBUG: 儲存特徵檔案: {filepath}\n")
+            sys.stderr.write(f"DEBUG: 開始搜尋舊檔案...\n")
+            sys.stderr.flush()
+            
+            # 更精確的舊檔案檢測 - 使用更精確的模式匹配，匹配股票代碼、產業和日期範圍
+            pattern = f"{stock_id}_{industry}_{start_date}_{end_date}_*.csv"
+            sys.stderr.write(f"DEBUG: 搜尋舊檔案模式: {pattern}\n")
+            existing_files = list(self.config.features_path.glob(pattern))
+            sys.stderr.write(f"DEBUG: 找到 {len(existing_files)} 個可能的舊檔案\n")
+            sys.stderr.flush()
+            
+            # 過濾出需要刪除的檔案（排除當前檔案）
+            files_to_delete = []
+            for old_file in existing_files:
+                try:
+                    # 檢查是否為當前檔案
+                    if old_file.name == filename:
+                        sys.stderr.write(f"DEBUG: 跳過當前檔案: {old_file.name}\n")
+                        continue
+                    
+                    # 將檔案添加到刪除列表
+                    sys.stderr.write(f"DEBUG: 找到需要刪除的舊檔案: {old_file.name}\n")
+                    files_to_delete.append(old_file)
+                except Exception as e:
+                    # 如果解析失敗，忽略該檔案
+                    sys.stderr.write(f"DEBUG: 處理檔案 {old_file.name} 時發生錯誤: {str(e)}\n")
+                    sys.stderr.flush()
+                    continue
+            
+            # 如果存在舊檔案，嘗試刪除它們
+            sys.stderr.write(f"DEBUG: 找到 {len(files_to_delete)} 個需要刪除的舊檔案\n")
+            sys.stderr.flush()
+            
+            # 先儲存新檔案，確保新檔案已經寫入
+            df.to_csv(filepath, index=False, encoding=self.config.ENCODING)
+            self.logger.info(f"已儲存特徵至: {filepath}")
+            
+            # 等待一小段時間，確保檔案系統操作完成
+            time.sleep(0.5)
+            
+            # 刪除舊檔案
+            for old_file in files_to_delete:
+                try:
+                    sys.stderr.write(f"DEBUG: 嘗試刪除舊的特徵檔案: {old_file}\n")
+                    
+                    # 檢查檔案是否存在
+                    if not old_file.exists():
+                        sys.stderr.write(f"DEBUG: 舊檔案不存在: {old_file}\n")
+                        continue
+                    
+                    # 嘗試更改檔案權限
+                    try:
+                        os.chmod(str(old_file), 0o777)
+                        sys.stderr.write(f"DEBUG: 已更改檔案權限: {old_file}\n")
+                    except Exception as e:
+                        sys.stderr.write(f"DEBUG: 更改檔案權限時發生錯誤: {str(e)}\n")
+                    
+                    # 嘗試使用不同方法刪除檔案
+                    deleted = False
+                    
+                    # 方法1: 使用pathlib的unlink
+                    try:
+                        old_file.unlink()
+                        sys.stderr.write(f"DEBUG: 成功使用unlink刪除舊檔案: {old_file}\n")
+                        deleted = True
+                    except Exception as e:
+                        sys.stderr.write(f"DEBUG: 使用unlink刪除舊檔案 {old_file} 時發生錯誤: {str(e)}\n")
+                    
+                    # 方法2: 使用os.remove
+                    if not deleted:
+                        try:
+                            os.remove(str(old_file))
+                            sys.stderr.write(f"DEBUG: 成功使用os.remove刪除舊檔案: {old_file}\n")
+                            deleted = True
+                        except Exception as e:
+                            sys.stderr.write(f"DEBUG: 使用os.remove刪除舊檔案 {old_file} 時發生錯誤: {str(e)}\n")
+                    
+                    # 方法3: 使用os.unlink
+                    if not deleted:
+                        try:
+                            os.unlink(str(old_file))
+                            sys.stderr.write(f"DEBUG: 成功使用os.unlink刪除舊檔案: {old_file}\n")
+                            deleted = True
+                        except Exception as e:
+                            sys.stderr.write(f"DEBUG: 使用os.unlink刪除舊檔案 {old_file} 時發生錯誤: {str(e)}\n")
+                    
+                    # 檢查是否成功刪除
+                    if not deleted:
+                        sys.stderr.write(f"WARNING: 無法刪除舊檔案: {old_file}\n")
+                    
+                    sys.stderr.flush()
+                except Exception as e:
+                    sys.stderr.write(f"DEBUG: 處理舊檔案 {old_file} 時發生錯誤: {str(e)}\n")
+                    sys.stderr.flush()
+            
+            return True
+            
+        except Exception as e:
+            self.logger.error(f"儲存特徵檔案時發生錯誤: {str(e)}")
             return False
 
 def setup_logging():

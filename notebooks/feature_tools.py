@@ -1,3 +1,4 @@
+import argparse
 import logging
 from pathlib import Path
 from datetime import datetime
@@ -7,7 +8,6 @@ import time
 import pandas as pd
 from feature_config import FeatureConfig
 from feature_manager import FeatureManager
-from feature_validator import FeatureValidator
 
 def setup_logging(log_path: Path) -> logging.Logger:
     """設定日誌系統"""
@@ -15,7 +15,7 @@ def setup_logging(log_path: Path) -> logging.Logger:
     log_path.mkdir(parents=True, exist_ok=True)
     
     # 創建logger
-    logger = logging.getLogger("FeatureGeneration")
+    logger = logging.getLogger("FeatureTools")
     logger.setLevel(logging.INFO)
     
     # 清除現有的處理器
@@ -23,7 +23,7 @@ def setup_logging(log_path: Path) -> logging.Logger:
         logger.handlers.clear()
     
     # 創建文件處理器
-    log_file = log_path / f'feature_generation_{datetime.now():%Y%m%d}.log'
+    log_file = log_path / f'feature_tools_{datetime.now():%Y%m%d}.log'
     file_handler = logging.FileHandler(log_file, encoding='utf-8')
     file_handler.setLevel(logging.INFO)
     
@@ -41,39 +41,6 @@ def setup_logging(log_path: Path) -> logging.Logger:
     logger.addHandler(console_handler)
     
     return logger
-
-def validate_config(config: FeatureConfig, logger: logging.Logger) -> bool:
-    """驗證配置是否有效"""
-    try:
-        if not config.TEST_SETTING.get('start_date') or not config.TEST_SETTING.get('end_date'):
-            logger.error("缺少必要的日期配置")
-            return False
-        if not config.TEST_SETTING.get('test_stocks'):
-            logger.error("缺少測試股票列表")
-            return False
-        
-        # 添加更多驗證
-        if not isinstance(config.TEST_SETTING.get('test_stocks'), list):
-            logger.error("test_stocks 必須是列表格式")
-            return False
-            
-        # 驗證日期格式
-        try:
-            datetime.strptime(config.TEST_SETTING['start_date'], '%Y-%m-%d')
-            datetime.strptime(config.TEST_SETTING['end_date'], '%Y-%m-%d')
-        except ValueError:
-            logger.error("日期格式錯誤，應為 YYYY-MM-DD")
-            return False
-            
-        # 驗證開始日期小於結束日期
-        if config.TEST_SETTING['start_date'] > config.TEST_SETTING['end_date']:
-            logger.error("開始日期不能大於結束日期")
-            return False
-            
-        return True
-    except Exception as e:
-        logger.error(f"配置驗證失敗: {str(e)}")
-        return False
 
 def check_features(config: FeatureConfig, logger: logging.Logger, stock_ids=None):
     """檢查特徵檔案
@@ -176,8 +143,8 @@ def check_features(config: FeatureConfig, logger: logging.Logger, stock_ids=None
     except Exception as e:
         logger.error(f"檢查特徵檔案時發生錯誤: {str(e)}")
 
-def test_delete_files(config: FeatureConfig, logger: logging.Logger, stock_id, industry, start_date, end_date, auto_confirm=False):
-    """測試刪除檔案功能
+def delete_old_files(config: FeatureConfig, logger: logging.Logger, stock_id, industry, start_date, end_date, auto_confirm=False):
+    """刪除舊的特徵檔案
     
     Args:
         config: 配置對象
@@ -189,7 +156,7 @@ def test_delete_files(config: FeatureConfig, logger: logging.Logger, stock_id, i
         auto_confirm: 是否自動確認刪除檔案
     """
     try:
-        logger.info("開始測試檔案刪除功能...")
+        logger.info("開始刪除舊的特徵檔案...")
         
         # 設定特徵檔案路徑
         features_dir = config.features_path
@@ -278,100 +245,86 @@ def test_delete_files(config: FeatureConfig, logger: logging.Logger, stock_id, i
         else:
             logger.info("沒有找到需要刪除的檔案")
         
-        logger.info("檔案刪除測試完成")
+        logger.info("檔案刪除完成")
         
     except Exception as e:
-        logger.error(f"測試檔案刪除功能時發生錯誤: {str(e)}")
+        logger.error(f"刪除舊的特徵檔案時發生錯誤: {str(e)}")
+
+def list_features(config: FeatureConfig, logger: logging.Logger, stock_ids=None):
+    """列出特徵檔案
+    
+    Args:
+        config: 配置對象
+        logger: 日誌對象
+        stock_ids: 要列出的股票代碼列表，如果為None則列出所有股票
+    """
+    try:
+        logger.info("開始列出特徵檔案...")
+        
+        # 設定特徵檔案路徑
+        features_dir = config.features_path
+        
+        # 查找特徵檔案
+        files = list(features_dir.glob("*.csv"))
+        
+        # 如果指定了股票代碼，則只列出這些股票的特徵檔案
+        if stock_ids:
+            files = [f for f in files if any(stock_id in f.name for stock_id in stock_ids)]
+        
+        # 按修改時間排序
+        files = sorted(files, key=lambda x: x.stat().st_mtime, reverse=True)
+        
+        if not files:
+            logger.warning("找不到特徵檔案")
+            return
+        
+        # 列出特徵檔案
+        logger.info(f"找到 {len(files)} 個特徵檔案:")
+        for i, file in enumerate(files):
+            file_size = file.stat().st_size / (1024 * 1024)  # 轉換為MB
+            file_time = datetime.fromtimestamp(file.stat().st_mtime).strftime('%Y-%m-%d %H:%M:%S')
+            logger.info(f"{i+1}. {file.name} ({file_size:.2f} MB, {file_time})")
+        
+        logger.info("特徵檔案列表完成")
+        
+    except Exception as e:
+        logger.error(f"列出特徵檔案時發生錯誤: {str(e)}")
 
 def main():
     """主程序"""
-    logger = None
+    # 解析命令行參數
+    parser = argparse.ArgumentParser(description='特徵檔案管理工具')
+    parser.add_argument('action', choices=['check', 'delete', 'list'], help='要執行的操作')
+    parser.add_argument('--stock_id', help='股票代碼')
+    parser.add_argument('--industry', help='產業名稱')
+    parser.add_argument('--start_date', help='開始日期 (格式: YYYYMMDD)')
+    parser.add_argument('--end_date', help='結束日期 (格式: YYYYMMDD)')
+    parser.add_argument('--auto_confirm', action='store_true', help='自動確認刪除檔案')
+    args = parser.parse_args()
+    
+    # 初始化配置
+    config = FeatureConfig()
+    
+    # 設定日誌
+    logger = setup_logging(config.log_path)
+    
     try:
-        # 初始化配置
-        config = FeatureConfig()
-        
-        # 設定日誌
-        logger = setup_logging(config.log_path)
-        
-        # 驗證配置
-        if not validate_config(config, logger):
-            logger.error("配置驗證失敗，程序終止")
-            sys.exit(1)
-        
-        # 添加配置文件存在性檢查
-        if not config.project_path.exists():
-            raise FileNotFoundError(f"找不到專案目錄：{config.project_path}")
-            
-        # 添加數據目錄檢查
-        if not config.data_path.exists():
-            raise FileNotFoundError(f"找不到數據目錄：{config.data_path}")
-        
-        # 記錄開始時間
-        start_time = datetime.now()
-        logger.info("開始特徵生成流程...")
-        logger.info(f"處理時間範圍: {config.TEST_SETTING['start_date']} 到 {config.TEST_SETTING['end_date']}")
-        logger.info(f"處理股票數量: {len(config.TEST_SETTING['test_stocks'])}")
-        
-        # 初始化特徵管理器
-        logger.info("初始化特徵管理器...")
-        manager = FeatureManager(config)
-        
-        # 生成特徵
-        logger.info("開始生成特徵...")
-        if not manager.generate_features():
-            logger.error("特徵生成失敗")
-            return
-            
-        logger.info("特徵生成完成")
-        
-        # 驗證特徵
-        logger.info("開始驗證特徵...")
-        validator = FeatureValidator(config)
-        if not validator.validate_features():
-            logger.warning("特徵驗證發現問題")
-            return
-            
-        logger.info("特徵驗證通過")
-        
-        # 檢查特徵檔案
-        logger.info("開始檢查特徵檔案...")
-        check_features(config, logger, config.TEST_SETTING['test_stocks'])
-        
-        # 記錄結束時間和執行時間
-        end_time = datetime.now()
-        execution_time = end_time - start_time
-        logger.info(f"特徵生成流程結束，總執行時間: {execution_time}")
-        
-        # 記錄記憶體使用情況
-        import psutil
-        process = psutil.Process()
-        memory_info = process.memory_info()
-        logger.info(f"最終記憶體使用: {memory_info.rss / 1024 / 1024:.2f} MB")
-        
-    except ImportError as e:
-        if logger:
-            logger.error(f"模組導入錯誤: {str(e)}")
-        else:
-            print(f"錯誤: 模組導入失敗: {str(e)}")
-    except FileNotFoundError as e:
-        if logger:
-            logger.error(f"找不到必要的文件: {str(e)}")
-        else:
-            print(f"錯誤: 找不到必要的文件: {str(e)}")
-    except PermissionError as e:
-        if logger:
-            logger.error(f"權限錯誤: {str(e)}")
-        else:
-            print(f"錯誤: 權限不足: {str(e)}")
+        # 執行操作
+        if args.action == 'check':
+            stock_ids = [args.stock_id] if args.stock_id else None
+            check_features(config, logger, stock_ids)
+        elif args.action == 'delete':
+            if not args.stock_id or not args.industry or not args.start_date or not args.end_date:
+                logger.error("刪除操作需要指定股票代碼、產業名稱、開始日期和結束日期")
+                return
+            delete_old_files(config, logger, args.stock_id, args.industry, args.start_date, args.end_date, args.auto_confirm)
+        elif args.action == 'list':
+            stock_ids = [args.stock_id] if args.stock_id else None
+            list_features(config, logger, stock_ids)
     except Exception as e:
-        if logger:
-            logger.error(f"執行過程中發生錯誤: {str(e)}", exc_info=True)
-        else:
-            print(f"錯誤: {str(e)}")
-        raise
+        logger.error(f"執行過程中發生錯誤: {str(e)}", exc_info=True)
     finally:
-        if logger:
-            logger.info("特徵生成流程結束")
+        logger.info("特徵檔案管理工具執行完成")
 
 if __name__ == "__main__":
     main() 
